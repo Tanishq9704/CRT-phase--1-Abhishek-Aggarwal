@@ -1,0 +1,195 @@
+// problem 1 if else condition
+//to verify user's age 
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cin >> age;
+    // if condition
+    if(age >= 18){
+        cout << "Eligible for vote";
+        }else{
+            cout << "Not eligible for vote";
+        }
+    return 0;
+}
+
+
+
+
+
+
+// Problem 2-- Nested If - else condition 
+// to verify user's age wether eligible for vote or not ?
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cin >> age;
+    
+    
+    if(age >= 18) {
+        if (age >= 100) {
+            cout <<"Eligible for Vote (But we are Super senior citizen";
+        } else {
+            cout <<"Eligible for Vote";
+        }
+    } else {
+        if(age < 0) {
+            cout << "Enter a Valid Age number";
+        } else {
+            cout << "Not Eligible for Vote";
+        }
+    }
+    return 0;
+
+
+
+
+
+
+  
+  // problem 3 -- tenanary operator
+// find the greater number amoung 2
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a, b;
+    int max_number;
+    
+    cin >> a >> b;
+    
+    //Ternary operator
+    max_number =(a>b) ? a : b;
+    cout << max_number;
+    return 0;
+}
+
+
+
+// problem 4 -- contine statement
+// Print 1 to N and avoid those number which are divisible
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cin >> n; 
+    
+    for(int i =1; i <= n; i++) {
+        if (i % 3 ==0) {
+            continue;
+        }
+        cout << i << " ";
+        
+    }
+    cout << "\n";
+    return 0;
+}
+
+
+
+
+  //probem 5
+// n numbers till sum comes negative
+
+#include <iostream>
+using namespace std;
+int main()
+{
+  int n;
+  int sum = 0;
+  
+  while(true) {
+      cin >> n;
+      
+      if(n<0){
+          break;
+          }
+  sum = sum + n;
+      
+  }
+cout << sum;
+    return 0;
+}
+
+
+
+
+
+
+
+
+  // problem 6
+#include <iostream>
+using namespace std;
+
+int main() {
+    string dayORNight;
+    bool motionDetected;
+    
+    cout << "is it Day or Night? : ";
+    cin >> dayORNight;
+    cout << "Is motion Detected? (1 for yes , 0 for no): ";
+    cin >> motionDetected;
+    
+    if(dayORNight == "Night" || dayORNight == "night"){
+        if(motionDetected) {
+            cout << "turn on the LED light with 100% brightness..";
+        } else {
+            cout << "turn on the LED light with only 10 percent of brightness";
+        } 
+        } else { 
+            cout << "Turn off the light...";
+    }
+    return 0;
+}
+
+
+
+
+
+  // problem 7
+// customer support IVR system
+// 1 -- for support
+// 2 -- for billing
+// 3 -- for technical support
+// 4 -- for billing
+#include <iostream>
+using namespace std;
+int main()
+{
+   int choice;
+   cin >> choice;
+   
+   switch(choice) {
+       case 1:
+       cout << " Tranferrin call to the customer support.....";
+       break;
+       
+       case 2:
+       cout << "Tranferring call to the billing and accounts section";
+       break;
+       
+       case 3:
+       cout << "Connecting to our technical help desk...";
+       break;
+       
+       case 4:
+       cout << "connecting call to the agent....";
+       break;
+       
+       default:
+       cout << "it is an invalid selection,enter a valid option";
+       break;
+       
+       
+   }
+   
+   
+    return 0;
+}
