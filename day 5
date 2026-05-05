@@ -171,3 +171,43 @@ int main(){
     
     return 0;
     }
+
+
+// problem 6
+// pointers
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int height = 24;
+    int *ptr = &height;
+  
+    
+    
+    // height =28
+    *ptr = 28;
+    cout << *ptr;
+    return 0;
+}
+
+
+
+// problem 7
+// pointers
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a, b;
+    cin >> a;
+    cin >> b;
+    
+    int *ptr1 =&a;
+    int *ptr2 =&b;
+    
+    int sum = *ptr1 + *ptr2;
+    cout << sum;
+    return 0;
+}
