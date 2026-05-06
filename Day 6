@@ -1,1 +1,179 @@
+// Problem 1
+// swapping of values of 2 variables 
 
+
+#include<iostream>
+using namespace std;
+
+void swapNumber(int *x, int *y){
+    int temp = *x;
+    *x=*y;
+    *y=temp;
+}
+
+
+int main( ){
+    int a ;
+    int b ;
+    cin >> a;
+    cin >> b;
+    
+    swapNumber(&a, &b);
+    cout << a << " " << b;
+}
+
+
+__________________________________________________________________________________________________
+
+
+// problem 2
+// default Arguments
+
+#include<iostream>
+using namespace std;
+
+int area(int a, int b=10){
+    return a*b;
+}
+
+
+int main(){
+    int n;
+    cin >> n;
+    int areatriangle = area(n);
+    cout << areatriangle ;
+}
+
+________________________________________________________________________________________________
+
+
+// problem 3
+// call by value - photocopy
+// call by refrence - original copy (address)
+
+#include <iostream>
+using namespace std;
+
+void updatebyValue(int a){
+    a = 500;
+}
+
+void updatebyRefrence(int &a){
+    a = 500;
+}
+
+
+int main (){
+    int original = 100;
+    cout << original << "\n";
+    
+    updatebyValue(original);
+    cout << original << "\n";
+    
+    updatebyRefrence(original);
+    cout << original;
+}
+
+_________________________________________________________________________________________
+
+
+// problem 4
+// coffee price
+
+#include <iostream>
+using namespace std;
+
+int coffeeprice(int c){
+    return c*30;
+}
+
+int main(){
+    int n;
+    cout << "Enter the number of coffees";
+    cin >>  n ;
+    cout << "Total Bill Is:" << coffeeprice(n) << "ruppees";
+    return 0;
+}
+
+
+
+_________________________________________________________________________________________________
+
+
+
+// problem 4
+// coffee price
+
+#include <iostream>
+using namespace std;
+
+int chocolatecoffee(int c){
+    return c*30;
+}
+
+int coldcoffee(int d){
+    return d*60;
+}
+
+int hazelnutcoffee(int e){
+    return e*100;
+}
+
+int main(){
+   
+      int choice;
+    cout << "1. chocolate coffee\n2. cold coffee\n3. hazelnut coffee\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+    int n; 
+    cin >> n ;
+
+    switch (choice) {
+        case 1:
+            cout << chocolatecoffee(n) << endl;
+            break;
+        case 2:
+            cout << coldcoffee(n) << endl;
+            break;
+        case 3:
+            cout << hazelnutcoffee(n) << endl;
+            break;
+        default:
+            cout << "Invalid choice! Please try again." << endl;
+    }
+    return 0;
+}
+
+___________________________________________________________________________________________
+
+
+// practice problem -- 5
+// Smart AC Remote // Function Overloading // default arguments
+
+#include <iostream>
+using namespace std;
+
+void setTemperature(int temp = 22){
+    cout << "Temperature set to " << temp << "\n" ;
+}
+
+void setTemperature(double temp){
+    cout << "Temperature set to " << temp <<  "\n" ;
+}
+
+void setTemperature(string mode){
+    if(mode == "ECO"){
+            cout << "Temperature set to 24" << "\n" ;
+    }else if(mode == "TURBO"){
+         cout << "Temperature set to 16" << "\n" ;
+    }
+    
+}
+
+
+int main(){
+   setTemperature(); // default value -- 22
+   setTemperature(20.5); // manually setting the Temperature
+   setTemperature("ECO"); // set Temperature to 24;
+   setTemperature("TURBO"); // set Temperature to 18
+}
