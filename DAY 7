@@ -1,0 +1,163 @@
+// problem 1 
+// access specifier
+//7.2 -- public
+
+
+#include <iostream>
+using namespace std;
+
+
+class bankAccount {
+    private:
+    int balance = 5000;
+    
+    public:
+    void showBalance(){
+        cout << "Balance in your account is:" << balance;
+    }
+};
+int main()
+{
+    bankAccount myaccount;
+    myaccount.showBalance();
+}
+
+
+_____________________________________________________________________________________________
+
+// access Specifier
+//7.3 -- protected
+
+#include<iostream>
+using namespace std;
+
+class Parent {
+    protected:
+    int secretCode = 1234;
+};
+
+class child : public Parent {
+    public:
+    void accessOfSecretCode(){
+      cout  << "Secret code of the locker is:" << secretCode ;
+     }
+};
+
+int main(){
+    child obj1;
+    obj1.accessOfSecretCode();
+}
+
+
+__________________________________________________________________________________________
+
+
+// Problem -- 2
+// Constructors 
+// Types -- 2.1 -- default
+//          2.2 -- Parameterized
+//          2.3 -- Copy
+
+// 2.1 -- Default Constructor
+
+#include<iostream>
+using namespace std;
+
+class wifiConnection {
+public:    
+    string networkName;
+    string password;
+    
+    // Constructor
+    wifiConnection() {
+        networkName = "ACTFibre";
+        password = "BJP wons";
+    }
+    
+public:
+void showDetails() {
+   cout << "NetWork name is " << networkName << " and its password is " << password; 
+    }
+};
+
+int main() {
+    wifiConnection obj1;
+    obj1.showDetails();
+}
+
+_____________________________________________________________________________________
+
+// 2.2 parameterized Constructor
+
+#include <iostream>
+using namespace std;
+class student {
+    public:
+    string name;
+    int id;
+    
+    //Constructor 
+    student(string studentName, int studentid){
+        name = studentName;
+        id = studentid;
+    }
+    
+    void displayDetails() {
+        cout << name << id;
+    }
+};
+int main(){
+    student std1("Abhishek ",101);
+    std1.displayDetails();
+}
+
+____________________________________________________________________________________________
+
+
+//problem 3
+//pillar of OOPs
+// Encapsulation - it means we're binding the data into single unit (functions , data , variables , methods)
+//into a single unit called class and making some restrictions on this class member.
+// data Security
+// controlled access over my data
+// validation before acess
+
+#include<iostream>
+using namespace std;
+
+class bankaccountant{
+    private:
+    int balance;
+    
+    public:
+    void setbalance(int amount){
+    if(amount >= 0){
+        balance = amount;
+        
+    }else {
+        cout << "Enter a valid Number...";
+    }
+    }
+    
+    public:
+    int getbalance(){
+        return balance;
+    }
+};
+
+int main(){
+    bankaccountant obj1;
+    obj1.setbalance(5000);
+    obj1.getbalance();
+    cout << obj1.getbalance();
+}
+
+____________________________________________________________________________________________
+
+//problem -- 4
+// Abstraction -- hiding the implementation and showing only the neccessary / essential 
+// features to the users 
+// abstract class -- class cannot be initialized and it is formed using the abstract keyword
+//abstract method -- there is no initialization of the abstract method
+#include<iostream>
+using namespace std;
