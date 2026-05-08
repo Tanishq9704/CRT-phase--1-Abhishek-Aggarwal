@@ -68,7 +68,7 @@ int main()
 ________________________________________________________________________________________________
 
 
-  //Problem 2
+  //Problem 3
 //heiarchy inheritence
 #include <iostream>
 using namespace std;
@@ -109,7 +109,7 @@ int main()
 
 ____________________________________________________________________________________________
 
-  //Problem 3
+  //Problem 4
 //multiple inheritence
 #include <iostream>
 using namespace std;
@@ -140,3 +140,36 @@ int main(){
 }
 
 __________________________________________________________________________________________________________________________
+
+
+//Problem 5
+//hybrid inheritence using virtual base class
+#include <iostream>
+using namespace std;
+
+class grandparent{
+  public:
+  void health(){
+    cout << "grand parent health is fine""\n";
+}
+};
+
+class parent1 : virtual public grandparent {
+    public:
+    // no logic
+    };
+
+
+class parent2 : virtual public grandparent {
+    public:
+    // no logic
+};
+
+class child : public parent1, public parent2{
+    // no logic
+};
+
+int main(){
+   child obj1;
+   obj1.health();
+}
