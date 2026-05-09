@@ -1,0 +1,142 @@
+//problem -- 1 
+// Function overriding
+
+#include <iostream>
+using namespace std;
+
+class kitchenAppliances{
+    
+    public:
+  virtual void turnOn(){
+        cout << " appliances are starting up....." << "\n";
+    }
+    public:
+ virtual void work(){
+     }
+};
+
+class toaster : public kitchenAppliances{
+   void work() override {
+       cout << " toast is heating up...";
+   }
+       
+};
+
+class fan : public kitchenAppliances{
+    public:
+     void turnOn() override{
+        cout << "fan blades are moving slowly..." << "\n";
+         }
+         public:
+    void work()override {
+        cout << "fan is giving cool air" << "\n";
+    }
+    
+};
+
+
+int main(){
+    kitchenAppliances* kitchenApp;
+    fan myfan;
+    kitchenApp = &myfan;
+    kitchenApp -> turnOn();
+    kitchenApp -> turnOn();
+    
+    toaster mytoast;
+    kitchenApp = &mytoast;
+    kitchenApp -> turnOn();
+    kitchenApp -> work();
+    
+    return 0;
+}
+
+____________________________________________________________________________________________________________________________________________________________
+
+// problem 2
+// Constructor Overloading
+// values are passed within the object
+
+#include <iostream>
+using namespace std;
+
+class rectangle{
+  public:
+  int length;
+  int width;
+  
+  rectangle(){
+      length = 1;
+      width = 1;
+      
+  }
+  
+  rectangle(int side){
+      length = side;
+      width = side;
+  }
+  
+  rectangle(int side1, int side2){
+      length = side1;
+      width = side2;
+  }
+  
+  void showarea(){
+     cout << length * width << "\n";
+  }
+  
+};
+
+
+int main(){
+    rectangle r1;
+    rectangle r2(5);
+    rectangle r3(5,4);
+    
+    r1.showarea();
+    r2.showarea();
+    r3.showarea();
+    return 0;
+}
+
+____________________________________________________________________________________________________________________________
+
+
+// Problem -- 3
+// Introduction to Arrays + transversal + memory Layout
+
+#include<iostream>
+using namespace std;
+
+void traversal(int arr[], int size){
+    for(int i = 0; i<size; i++) {
+        cout << arr[i] << " ";
+    }
+}
+
+
+int main(){
+    int arr[] = {10,20,30,40,50};
+    traversal(arr, 5);
+    
+}
+
+___________________________________________________________________________________________________________
+
+// Problem -- 4
+// Introduction to Arrays + transversal + memory Layout(printing address of the data)
+
+#include<iostream>
+using namespace std;
+
+void traversal(int arr[], int size){
+    for(int i = 0; i<size; i++) {
+        cout << &arr[i] << " ";
+    }
+}
+
+
+int main(){
+    int arr[] = {10,20,30,40,50};
+    traversal(arr, 5);
+    
+}
